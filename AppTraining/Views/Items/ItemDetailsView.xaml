@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTraining.Views.Items.ItemDetailsView"
+             Title="{Binding CurItem.ItemCode}">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Close" 
+                     Order="Primary"
+                     Clicked="Closed_Cliked"></ToolbarItem>
+
+        <ToolbarItem Text="Close2" 
+                     Order="Secondary"
+                     Command="{Binding CmdClose}"></ToolbarItem>
+
+        <ToolbarItem Text="Close3" 
+                     Order="Secondary"
+                     Command="{Binding CmdClose3}" 
+                     CommandParameter="{Binding CurItem.ItmsGrpCod}"></ToolbarItem>
+
+
+    </ContentPage.ToolbarItems>
+
+    <Grid Padding="15" RowSpacing="0"
+          HorizontalOptions="Center">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="{Binding CurItem.ItemCode}"></Label>
+        <Label Grid.Row="1" Text="{Binding CurItem.ItemName}"></Label>
+        <Label Grid.Row="2" Text="{Binding CurItem.ItmsGrpCod}"></Label>
+    </Grid>
+    
+</ContentPage>

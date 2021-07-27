@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTraining.Views.Login.Login">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"                    
+                     Padding="21">
+          
+            <Label Text="User Id"></Label>
+            <Entry x:Name="entryUserName"
+                   Text="{Binding userId}"></Entry>
+            
+
+            <Label Text="Password"></Label>
+            <Entry x:Name="entryPassword"
+                   Text="{Binding pw}"></Entry>
+            
+            <Frame Padding="0"
+                   Margin="3"
+                   CornerRadius="6" 
+                   BackgroundColor="CadetBlue">
+                
+                <Label Text="{Binding btnTextDisplay}" 
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontSize="Medium"
+                       Padding="15"></Label>
+                
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1"
+                                          Command="{Binding CmdLogin}">
+                        
+                    </TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Button Text="abcd" Clicked="loginTapped"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
