@@ -1,10 +1,6 @@
 ﻿using AppTraining.Models.Item;
 using AppTraining.ModelViews.Items;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,10 +11,10 @@ namespace AppTraining.Views.Items
     public partial class ItemDetailsView : ContentPage
     {
         ItemDetailsVM ViewModel;
-        public ItemDetailsView(OITM selectedItem)
+        public ItemDetailsView(OITM selectedItem, string repliedAddress)
         {
             InitializeComponent();
-            ViewModel = new ItemDetailsVM(Navigation, selectedItem);
+            ViewModel = new ItemDetailsVM(Navigation, selectedItem, repliedAddress);
             BindingContext = ViewModel;
 
             //BindingContext = new ItemDetailsVM(selectedItem);

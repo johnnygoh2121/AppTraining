@@ -23,16 +23,19 @@ namespace AppTraining.ModelViews.Items
 
         INavigation Navigation { get; set; }
 
+        string RepliedAddrs { get; set; }
+
         // constructor
-        public ItemDetailsVM(INavigation navigation, OITM selectedItem)
+        public ItemDetailsVM(INavigation navigation, OITM selectedItem, string repliedAddress)
         {
             try
             {
+                RepliedAddrs = repliedAddress;
                 Navigation = navigation;
                 CurItem = selectedItem;
                 ItemCode = CurItem.ItemCode;
 
-                ItemCode = ",,,,";
+                //ItemCode = ",,,,";
 
                 InitCmds();
             }
@@ -51,6 +54,8 @@ namespace AppTraining.ModelViews.Items
 
             CmdClose3 = new Command<string>( (string param) =>
             {
+                MessagingCenter.Send("TTTTTT",RepliedAddrs);
+
                 Navigation.PopAsync();
             });
 

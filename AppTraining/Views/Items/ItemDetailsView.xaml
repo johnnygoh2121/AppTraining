@@ -17,7 +17,7 @@
         <ToolbarItem Text="Close3" 
                      Order="Secondary"
                      Command="{Binding CmdClose3}" 
-                     CommandParameter="{Binding CurItem.ItmsGrpCod}"></ToolbarItem>
+                     CommandParameter="abc"></ToolbarItem>
 
 
     </ContentPage.ToolbarItems>

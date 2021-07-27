@@ -56,14 +56,15 @@ namespace AppTraining.ModelViews.Items
             {
                 // messaging center demo 
                 var address = "any_name_in_string_which_is_unique_in_this_App_xxxx9999";
-                MessagingCenter.Subscribe(this, address, (object data) => 
+                MessagingCenter.Subscribe(this, address, (string data) => 
                 {
-                    MessagingCenter.Unsubscribe<object>(this, address);
+                    MessagingCenter.Unsubscribe<string>(this, address);
 
                     if (data == null) return;
                     if (string.IsNullOrWhiteSpace($"{data}")) return;
 
                     // do something after received the event 
+                    StartTimerProces_xx(data);
                     return;
                 });
 
@@ -74,6 +75,21 @@ namespace AppTraining.ModelViews.Items
                 Console.WriteLine(e.Message);
             }
             
+        }
+
+        void StartTimerProces_xx (string data)
+        {
+            Device.StartTimer(new TimeSpan(0, 0, 0, 0, 120), () =>
+                {
+                    // Start mew process to the item;
+                    ProcessData(data);
+                    return true;
+                });
+        }
+
+        void ProcessData(string data)
+        {
+            // process the data let the pre process close
         }
 
         void LoadItems ()
